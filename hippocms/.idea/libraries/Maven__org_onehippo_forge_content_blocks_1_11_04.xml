@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.onehippo.forge:content-blocks:1.11.04">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/onehippo/forge/content-blocks/1.11.04/content-blocks-1.11.04.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/onehippo/forge/content-blocks/1.11.04/content-blocks-1.11.04-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/onehippo/forge/content-blocks/1.11.04/content-blocks-1.11.04-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

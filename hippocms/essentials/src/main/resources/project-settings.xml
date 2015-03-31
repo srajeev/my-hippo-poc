@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <name>project-settings</name>
+    <confirmParams>false</confirmParams>
+    <projectNamespace>hippocms</projectNamespace>
+    <selectedBeansPackage>com.accolade.beans</selectedBeansPackage>
+    <selectedComponentsPackage>com.accolade.components</selectedComponentsPackage>
+    <selectedRestPackage>com.accolade.rest</selectedRestPackage>
+    <setupDone>true</setupDone>
+    <templateLanguage>repository</templateLanguage>
+    <useSamples>true</useSamples>
+</project>

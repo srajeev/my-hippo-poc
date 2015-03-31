@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hippocms.iml" filepath="$PROJECT_DIR$/hippocms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrap/hippocms-bootstrap.iml" filepath="$PROJECT_DIR$/bootstrap/hippocms-bootstrap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrap/configuration/hippocms-bootstrap-configuration.iml" filepath="$PROJECT_DIR$/bootstrap/configuration/hippocms-bootstrap-configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrap/content/hippocms-bootstrap-content.iml" filepath="$PROJECT_DIR$/bootstrap/content/hippocms-bootstrap-content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cms/hippocms-cms.iml" filepath="$PROJECT_DIR$/cms/hippocms-cms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/essentials/hippocms-essentials.iml" filepath="$PROJECT_DIR$/essentials/hippocms-essentials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/site/hippocms-site.iml" filepath="$PROJECT_DIR$/site/hippocms-site.iml" />
+    </modules>
+  </component>
+</project>
+

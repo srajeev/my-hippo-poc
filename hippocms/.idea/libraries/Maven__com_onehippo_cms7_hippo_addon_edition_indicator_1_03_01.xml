@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.onehippo.cms7:hippo-addon-edition-indicator:1.03.01">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/onehippo/cms7/hippo-addon-edition-indicator/1.03.01/hippo-addon-edition-indicator-1.03.01.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/onehippo/cms7/hippo-addon-edition-indicator/1.03.01/hippo-addon-edition-indicator-1.03.01-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/onehippo/cms7/hippo-addon-edition-indicator/1.03.01/hippo-addon-edition-indicator-1.03.01-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

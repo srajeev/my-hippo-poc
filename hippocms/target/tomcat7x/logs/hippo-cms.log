@@ -1,0 +1,4 @@
+31.03.2015 15:42:32 WARN  localhost-startStop-1 [RepositoryLock.acquire:134] Existing lock file /Users/shyla.rajeev/projects/my-hippo-poc/plan_repo/.lock detected. Repository was not shut down properly.
+31.03.2015 15:42:37 INFO  localhost-startStop-1 [EventProcessor.<init>:118] Automatic export is enabled
+31.03.2015 15:42:37 INFO  localhost-startStop-1 [Configuration.addRepositoryPath:199] Changes to repository path '/content' will be exported to directory 'bootstrap/content'
+31.03.2015 15:42:37 INFO  localhost-startStop-1 [Configuration.addRepositoryPath:199] Changes to repository path '/' will be exported to directory 'bootstrap/configuration'

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Vendor: 
+Project-Build: -1
+Implementation-Title: Accolade CMS Project CMS
+Implementation-Version: 1.01.00-SNAPSHOT
+Implementation-Vendor-Id: com.accolade
+Built-By: shyla.rajeev
+Build-Jdk: 1.7.0_75
+Project-Version: 1.01.00-SNAPSHOT
+Created-By: Apache Maven 3.2.5
+Hippo-Release-Version: 7.9.7
+Archiver-Version: Plexus Archiver
+

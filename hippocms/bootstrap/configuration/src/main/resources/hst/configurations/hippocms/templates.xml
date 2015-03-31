@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?><sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="hst:templates">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>hst:templates</sv:value>
+  </sv:property>
+  <sv:node sv:name="base-layout.ftl">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:template</sv:value>
+    </sv:property>
+    <sv:property sv:name="hst:script" sv:type="String">
+      <sv:value>&lt;!doctype html&gt;
+&lt;#--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--&gt;
+    &lt;#include "../../hst:default/hst:templates/imports.ftl"&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"/&gt;
+    &lt;link rel="stylesheet" href="&lt;@hst.link  path="/css/bootstrap.css"/&gt;" type="text/css"/&gt;
+    &lt;@hst.defineObjects/&gt;
+    &lt;#if hstRequest.requestContext.cmsRequest&gt;
+      &lt;link rel="stylesheet" href="&lt;@hst.link  path="/css/cms-request.css"/&gt;" type="text/css"/&gt;
+    &lt;/#if&gt;
+&lt;@hst.headContributions categoryIncludes="htmlHead" xhtml=true/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6 col-md-offset-3"&gt;
+        &lt;@hst.include ref="top"/&gt;
+        &lt;@hst.include ref="menu"/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;@hst.include ref="main"/&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;@hst.include ref="footer"/&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;@hst.headContributions categoryIncludes="htmlBodyEnd" xhtml=true/&gt;
+&lt;/body&gt;
+&lt;/html&gt;</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="base-top-menu.ftl">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:template</sv:value>
+    </sv:property>
+    <sv:property sv:name="hst:script" sv:type="String">
+      <sv:value>    &lt;#include "../../hst:default/hst:templates/imports.ftl"&gt;
+&lt;#--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--&gt;
+&lt;#-- @ftlvariable name="menu" type="org.hippoecm.hst.core.sitemenu.HstSiteMenu" --&gt;
+&lt;#-- @ftlvariable id="editMode" type="java.lang.Boolean"--&gt;
+&lt;#if menu??&gt;
+  &lt;#if menu.siteMenuItems??&gt;
+    &lt;ul class="nav nav-pills"&gt;
+      &lt;#list menu.siteMenuItems as item&gt;
+        &lt;#if  item.selected || item.expanded&gt;
+          &lt;li class="active"&gt;&lt;a href="&lt;@hst.link link=item.hstLink/&gt;"&gt;${item.name}&lt;/a&gt;&lt;/li&gt;
+        &lt;#else&gt;
+          &lt;li&gt;&lt;a href="&lt;@hst.link link=item.hstLink/&gt;"&gt;${item.name}&lt;/a&gt;&lt;/li&gt;
+        &lt;/#if&gt;
+      &lt;/#list&gt;
+    &lt;/ul&gt;
+  &lt;/#if&gt;
+  &lt;@hst.cmseditmenu menu=menu/&gt;
+&lt;#else&gt;
+  &lt;#if editMode&gt;
+    &lt;h5&gt;[Menu Component]&lt;/h5&gt;
+    &lt;sub&gt;Click to edit Menu&lt;/sub&gt;
+  &lt;/#if&gt;
+&lt;/#if&gt;</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="base-footer.ftl">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:template</sv:value>
+    </sv:property>
+    <sv:property sv:name="hst:script" sv:type="String">
+      <sv:value>    &lt;#include "../../hst:default/hst:templates/imports.ftl"&gt;
+&lt;#--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--&gt;
+
+&lt;@hst.setBundle basename="essentials.global"/&gt;
+&lt;hr&gt;&lt;/hr&gt;
+&lt;div class="text-center"&gt;
+  &lt;sub&gt;&lt;@fmt.message key="footer.text"/&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;@hst.include ref="container"/&gt;
+</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="homepage-main.ftl">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:template</sv:value>
+    </sv:property>
+    <sv:property sv:name="hst:script" sv:type="String">
+      <sv:value>    &lt;#include "../../hst:default/hst:templates/imports.ftl"&gt;
+&lt;#--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--&gt;
+
+&lt;@hst.setBundle basename="essentials.homepage"/&gt;
+&lt;div&gt;
+  &lt;h1&gt;&lt;@fmt.message key="homepage.title"/&gt;&lt;/h1&gt;
+  &lt;p&gt;&lt;@fmt.message key="homepage.text"/&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;@hst.include ref="container"/&gt;
+</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="pagenotfound-main.ftl">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:template</sv:value>
+    </sv:property>
+    <sv:property sv:name="hst:script" sv:type="String">
+      <sv:value>    &lt;#include "../../hst:default/hst:templates/imports.ftl"&gt;
+&lt;#--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--&gt;
+
+&lt;@hst.setBundle basename="essentials.pagenotfound"/&gt;
+&lt;div&gt;
+  &lt;h1&gt;&lt;@fmt.message key="pagenotfound.title"/&gt;&lt;/h1&gt;
+  &lt;p&gt;&lt;@fmt.message key="pagenotfound.text"/&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;@hst.include ref="container"/&gt;
+</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="search-main.ftl">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:template</sv:value>
+    </sv:property>
+    <sv:property sv:name="hst:script" sv:type="String">
+      <sv:value>    &lt;#include "../../hst:default/hst:templates/imports.ftl"&gt;
+&lt;#--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--&gt;
+&lt;#-- @ftlvariable name="query" type="java.lang.String" --&gt;
+&lt;#-- @ftlvariable name="pageable" type="org.onehippo.cms7.essentials.components.paging.Pageable" --&gt;
+&lt;#if pageable??&gt;
+  &lt;#if pageable.total == 0&gt;
+    &lt;h3&gt;No results for: ${query}&lt;/h3&gt;
+  &lt;#else&gt;
+    &lt;#list pageable.items as item&gt;
+      &lt;@hst.link var="link" hippobean=item /&gt;
+      &lt;article&gt;
+        &lt;h3&gt;&lt;a href="${link}"&gt;${item.title}&lt;/a&gt;&lt;/h3&gt;
+      &lt;/article&gt;
+    &lt;/#list&gt;
+    &lt;#if pageable.showPagination??&gt;
+    &lt;#include "../../hst:default/hst:templates/pagination.ftl"&gt;
+    &lt;/#if&gt;
+  &lt;/#if&gt;
+&lt;#else&gt;
+  &lt;h3&gt;Please fill in a search term.&lt;/h3&gt;
+&lt;/#if&gt;</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="contentlist-main-contentlist.ftl">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:template</sv:value>
+    </sv:property>
+    <sv:property sv:name="hst:script" sv:type="String">
+      <sv:value>&lt;#include "../../hst:default/hst:templates/imports.ftl"&gt;
+&lt;#--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--&gt;
+&lt;#-- @ftlvariable name="pageable" type="org.onehippo.cms7.essentials.components.paging.Pageable" --&gt;
+&lt;#-- @ftlvariable name="item" type="com.accolade.beans.ContentDocument" --&gt;
+&lt;#if pageable??&gt;
+    &lt;#list pageable.items as item&gt;
+        &lt;@hst.link var="link" hippobean=item/&gt;
+    &lt;article class="has-edit-button"&gt;
+        &lt;@hst.cmseditlink hippobean=item/&gt;
+        &lt;h3&gt;&lt;a href="${link}"&gt;
+        ${item.title}
+        &lt;/a&gt;&lt;/h3&gt;
+        &lt;#if item.publicationDate??&gt;
+            &lt;p&gt;
+                &lt;@fmt.formatDate value=item.publicationDate.time type="both" dateStyle="medium" timeStyle="short"/&gt;
+            &lt;/p&gt;
+        &lt;/#if&gt;
+        &lt;p&gt;
+        ${item.introduction}
+        &lt;/p&gt;
+    &lt;/article&gt;
+    &lt;/#list&gt;
+&lt;/#if&gt;
+&lt;#if pageable.showPagination&gt;
+    &lt;#include "../../hst:default/hst:templates/pagination.ftl"&gt;
+&lt;/#if&gt;</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="planpage-main.ftl">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:template</sv:value>
+    </sv:property>
+    <sv:property sv:name="hst:script" sv:type="String">
+      <sv:value>&lt;#include "../../hst:default/hst:templates/imports.ftl"&gt;&#13;
+    &#13;
+&lt;#-- @ftlvariable name="document" type="com.accolade.beans.BenefitPlan" --&gt;&#13;
+  &#13;
+&lt;#if document??&gt;&#13;
+&lt;@hst.link var="link" hippobean=document/&gt;    		&#13;
+&lt;div class="yui-main"&gt;&#13;
+  &lt;div id="content" class="yui-b left-and-right "&gt;&#13;
+            &#13;
+    &lt;article class="has-edit-button"&gt;&#13;
+    &lt;@hst.cmseditlink hippobean=document/&gt;&#13;
+    		  &#13;
+    &lt;h2&gt;${document.plan}&lt;/h2&gt;&#13;
+&#13;
+  &lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/#if&gt;</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="planlistpage-main.ftl">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:template</sv:value>
+    </sv:property>
+    <sv:property sv:name="hst:script" sv:type="String">
+      <sv:value>&lt;#include "../../hst:default/hst:templates/imports.ftl"&gt;&#13;
+&#13;
+&lt;#-- @ftlvariable name="pageable" type="org.onehippo.cms7.essentials.components.paging.Pageable" --&gt;&#13;
+&lt;#-- @ftlvariable name="item" type="com.accolade.beans.BenefitPlan" --&gt;&#13;
+&lt;#if pageable??&gt;&#13;
+    &lt;#list pageable.items as item&gt;&#13;
+        &lt;@hst.link var="link" hippobean=item/&gt;&#13;
+    &lt;article class="has-edit-button"&gt;&#13;
+        &lt;@hst.cmseditlink hippobean=item/&gt;&#13;
+        &lt;h3&gt;&lt;a href="${link}"&gt;&#13;
+        ${item.plan}&#13;
+        &lt;/a&gt;&lt;/h3&gt;&#13;
+    &lt;/article&gt;&#13;
+    &lt;/#list&gt;&#13;
+&lt;/#if&gt;&#13;
+&lt;#if pageable.showPagination&gt;&#13;
+    &lt;#include "../../hst:default/hst:templates/pagination.ftl"&gt;&#13;
+&lt;/#if&gt;</sv:value>
+    </sv:property>
+  </sv:node>
+</sv:node>

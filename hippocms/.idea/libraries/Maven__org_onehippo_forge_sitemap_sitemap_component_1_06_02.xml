@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.onehippo.forge.sitemap:sitemap-component:1.06.02">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/onehippo/forge/sitemap/sitemap-component/1.06.02/sitemap-component-1.06.02.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/onehippo/forge/sitemap/sitemap-component/1.06.02/sitemap-component-1.06.02-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/onehippo/forge/sitemap/sitemap-component/1.06.02/sitemap-component-1.06.02-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
